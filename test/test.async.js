@@ -220,17 +220,12 @@ describe( 'async', function tests() {
 		function onFinish( error ) {
 			var fpath1,
 				fpath2,
-				f1, f2,
-				bool;
+				f1, f2;
 
 			if ( error ) {
 				assert.ok( false );
 				return;
 			}
-			bool = fs.existsSync(  );
-
-			assert.isTrue( bool );
-
 			fpath1 = path.join( dirpath, '.jshintignore' );
 			f1 = fs.readFileSync( fpath1 );
 

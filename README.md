@@ -1,6 +1,6 @@
 .jshintignore
 =========
-[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][codecov-image]][codecov-url] [![Dependencies][dependencies-image]][dependencies-url]
 
 > Creates a `.jshintignore` file.
 
@@ -171,8 +171,8 @@ Copyright &copy; 2015. Athan Reines.
 [travis-image]: http://img.shields.io/travis/kgryte/jshintignore/master.svg
 [travis-url]: https://travis-ci.org/kgryte/jshintignore
 
-[coveralls-image]: https://img.shields.io/coveralls/kgryte/jshintignore/master.svg
-[coveralls-url]: https://coveralls.io/r/kgryte/jshintignore?branch=master
+[codecov-image]: https://img.shields.io/codecov/c/github/kgryte/jshintignore/master.svg
+[codecov-url]: https://codecov.io/github/kgryte/jshintignore?branch=master
 
 [dependencies-image]: http://img.shields.io/david/kgryte/jshintignore.svg
 [dependencies-url]: https://david-dm.org/kgryte/jshintignore
