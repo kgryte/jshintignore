@@ -1,6 +1,6 @@
 {
   "name": "@kgryte/jshintignore",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Creates a .jshintignore file.",
   "author": {
     "name": "Athan Reines",
