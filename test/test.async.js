@@ -229,7 +229,7 @@ describe( 'async', function tests() {
 			fpath1 = path.join( dirpath, '.jshintignore' );
 			f1 = fs.readFileSync( fpath1 );
 
-			fpath2 = path.join( path.resolve( __dirname, '../lib/default' ), '.jshintignore' );
+			fpath2 = path.join( path.resolve( __dirname, '../lib/default' ), 'jshintignore' );
 			f2 = fs.readFileSync( fpath2 );
 
 			assert.strictEqual( f1, f2 );
