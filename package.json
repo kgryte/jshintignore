@@ -40,6 +40,7 @@
     "@kgryte/noop": "^1.0.0",
     "minimist": "^1.1.2",
     "pkginfo": "^0.3.0",
+    "update-notifier": "^0.5.0",
     "validate.io-contains": "^1.0.0",
     "validate.io-function": "^1.0.2",
     "validate.io-object": "^1.0.4",
