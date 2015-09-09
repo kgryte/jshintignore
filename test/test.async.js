@@ -3,19 +3,10 @@
 
 // MODULES //
 
-var // Expectation library:
-	chai = require( 'chai' ),
-
-	// Recursively make directories:
+var chai = require( 'chai' ),
 	mkdirp = require( 'mkdirp' ),
-
-	// Path module:
 	path = require( 'path' ),
-
-	// Filesystem module:
 	fs = require( 'fs' ),
-
-	// Module to be tested:
 	cp = require( './../lib/async.js' );
 
 
@@ -155,7 +146,7 @@ describe( 'async', function tests() {
 		}
 	});
 
-	it( 'should create a .jshintignore file in a specified directory', function test() {
+	it( 'should create a .jshintignore file in a specified directory', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -164,17 +155,19 @@ describe( 'async', function tests() {
 		cp( dirpath, onFinish );
 
 		function onFinish( error ) {
+			var bool;
 			if ( error ) {
 				assert.ok( false );
-				return;
-			}
-			var bool = fs.existsSync( path.join( dirpath, '.jshintignore' ) );
+			} else {
+				bool = fs.existsSync( path.join( dirpath, '.jshintignore' ) );
 
-			assert.isTrue( bool );
+				assert.isTrue( bool );
+			}
+			done();
 		}
 	});
 
-	it( 'should pass any write errors to a provided callback', function test() {
+	it( 'should pass any write errors to a provided callback', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -184,13 +177,14 @@ describe( 'async', function tests() {
 		function onFinish( error ) {
 			if ( error ) {
 				assert.ok( true );
-				return;
+			} else {
+				assert.ok( false );
 			}
-			assert.ok( false );
+			done();
 		}
 	});
 
-	it( 'should create a .jshintignore file in a specified directory without requiring a callback', function test() {
+	it( 'should create a .jshintignore file in a specified directory without requiring a callback', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -204,10 +198,11 @@ describe( 'async', function tests() {
 			var bool = fs.existsSync( path.join( dirpath, '.jshintignore' ) );
 
 			assert.isTrue( bool );
+			done();
 		}
 	});
 
-	it( 'should create a .jshintignore file using a specified template', function test() {
+	it( 'should create a .jshintignore file using a specified template', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -224,6 +219,7 @@ describe( 'async', function tests() {
 
 			if ( error ) {
 				assert.ok( false );
+				done();
 				return;
 			}
 			fpath1 = path.join( dirpath, '.jshintignore' );
@@ -232,11 +228,12 @@ describe( 'async', function tests() {
 			fpath2 = path.join( path.resolve( __dirname, '../lib/default' ), 'jshintignore' );
 			f2 = fs.readFileSync( fpath2 );
 
-			assert.strictEqual( f1, f2 );
+			assert.strictEqual( f1.toString(), f2.toString() );
+			done();
 		}
 	});
 
-	it( 'should ignore any unrecognized options', function test() {
+	it( 'should ignore any unrecognized options', function test( done ) {
 		var dirpath;
 
 		dirpath = path.resolve( __dirname, '../build/' + new Date().getTime() );
@@ -247,13 +244,15 @@ describe( 'async', function tests() {
 		}, onFinish );
 
 		function onFinish( error ) {
+			var bool;
 			if ( error ) {
 				assert.ok( false );
-				return;
-			}
-			var bool = fs.existsSync( path.join( dirpath, '.jshintignore' ) );
+			} else {
+				bool = fs.existsSync( path.join( dirpath, '.jshintignore' ) );
 
-			assert.isTrue( bool );
+				assert.isTrue( bool );
+			}
+			done();
 		}
 	});
 
