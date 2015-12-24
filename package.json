@@ -40,7 +40,7 @@
     "@kgryte/noop": "^1.0.0",
     "minimist": "^1.1.2",
     "pkginfo": "^0.3.0",
-    "update-notifier": "^0.5.0",
+    "update-notifier": "^0.6.0",
     "validate.io-contains": "^1.0.0",
     "validate.io-function": "^1.0.2",
     "validate.io-object": "^1.0.4",
@@ -49,7 +49,7 @@
   "devDependencies": {
     "chai": "3.x.x",
     "codecov.io": "^0.1.5",
-    "istanbul": "^0.3.0",
+    "istanbul": "^0.4.1",
     "jshint": "2.x.x",
     "jshint-stylish": "2.x.x",
     "mkdirp": "^0.5.1",
